@@ -12,8 +12,35 @@
 	</head>
 	
 	<body>
-		<table>
+		<div class="row">
+		<div class="col-2"></div>
+		<div class="col-8" >
+		<table class="table table-bordered border-success caption-top table-hover">
+			<caption>:::게시판 목록:::</caption>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>등록날짜</th>
+					<th>조회수</th>
+				</tr>
+			</thead>
+			<tbody>
+			<c:forEach var="vo" items="${ board_list }">
+				<tr>
+					<td>${ vo.idx }</td>
+					<td>${ vo.subject }</td>
+					<td>${ vo.name }</td>
+					<td>${ vo.regidate }</td>
+					<td>${ vo.readhit }</td>
+				</tr>
+			</c:forEach>
+			</tbody>
 			
-		</table>	
+		</table>
+		<div class="col-2"></div>
+		</div>
+		</div>	
 	</body>
 </html>
